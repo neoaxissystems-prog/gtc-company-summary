@@ -75,24 +75,21 @@
       color:var(--accent2);
       font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.12em;
     }
-    .identity{
-      margin-top:14px;
+
+    .hero-summary{
+      margin-top:16px;
+      max-width:780px;
     }
-    .identity .name{
-      font-size:clamp(30px,5vw,50px);
-      line-height:1.05;
+    .hero-summary .hero-title{
+      margin:0;
+      font-size:clamp(24px,4vw,38px);
+      line-height:1.15;
       letter-spacing:-.03em;
       font-weight:800;
-      margin:0;
+      color:var(--text);
     }
-    .identity .role{
-      margin:8px 0 0;
-      color:#dbe7ff;
-      font-size:16px;
-      font-weight:600;
-    }
-    .identity .org{
-      margin:4px 0 0;
+    .hero-summary .hero-sub{
+      margin:10px 0 0;
       color:var(--muted);
       font-size:15px;
     }
@@ -120,7 +117,7 @@
       color:var(--accent2);
     }
     .focus-main{
-      font-size:clamp(24px,4vw,38px);
+      font-size:clamp(22px,3vw,30px);
       line-height:1.15;
       letter-spacing:-.03em;
       font-weight:800;
@@ -159,10 +156,17 @@
       margin-top:6px;
     }
     .team-member{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
       border:1px solid var(--line);
       border-radius:16px;
       background:rgba(255,255,255,.04);
       padding:12px 14px;
+    }
+    .member-info{
+      min-width:0;
     }
     .team-member .member-name{
       font-weight:800;
@@ -174,6 +178,9 @@
       font-size:13px;
       margin-top:4px;
       line-height:1.35;
+    }
+    .member-link{
+      flex:0 0 auto;
     }
 
     .quick-links{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
@@ -190,6 +197,12 @@
     .btn.linkedin{
       background:linear-gradient(180deg,#0a66c2,#084f96);
       border-color:rgba(255,255,255,.12);
+    }
+    .btn.small{
+      padding:8px 12px;
+      font-size:12px;
+      border-radius:999px;
+      white-space:nowrap;
     }
 
     .hero2{
@@ -252,6 +265,9 @@
       .top-grid,.hero2-grid,.grid{grid-template-columns:1fr}
       .interest-grid{grid-template-columns:1fr}
       .visual{min-height:220px}
+      .team-member{align-items:flex-start; flex-direction:column}
+      .member-link{width:100%}
+      .member-link .btn{width:100%; justify-content:center}
     }
   </style>
 </head>
@@ -281,10 +297,15 @@
     <section class="gtc-hero">
       <div class="kicker">What I'm Exploring at GTC</div>
 
-      <div class="identity">
-        <p class="name">Koji Ito</p>
-        <p class="role">Aircraft Manufacturing Division</p>
-        <p class="org">Mitsubishi Heavy Industries, Ltd.</p>
+      <div class="hero-summary">
+        <p class="hero-title">AI for engineering documentation and Physical AI for aerospace manufacturing</p>
+        <p class="hero-sub">
+          Exploring practical ways to improve documentation workflows and assess the potential of Physical AI in aircraft manufacturing environments.
+        </p>
+      </div>
+
+      <div class="quick-links">
+        <a class="btn linkedin" href="https://www.linkedin.com/in/koji-ito-44049a3b7" target="_blank" rel="noopener noreferrer">Let's connect on LinkedIn</a>
       </div>
 
       <div class="top-grid">
@@ -293,7 +314,7 @@
           <p class="focus-main">AI for engineering documentation</p>
           <p class="focus-main">Physical AI for aerospace manufacturing</p>
           <p class="focus-sub">
-            Exploring practical ways to improve documentation workflows and assess the potential of Physical AI in aircraft manufacturing environments.
+            Interested in practical, deployable use cases for engineering and manufacturing environments.
           </p>
         </div>
 
@@ -323,25 +344,36 @@
           <h2>Team at GTC</h2>
           <div class="team-stack">
             <div class="team-member">
-              <div class="member-name">Koji Ito</div>
-              <div class="member-org">Mitsubishi Heavy Industries</div>
+              <div class="member-info">
+                <div class="member-name">Koji Ito</div>
+                <div class="member-org">Mitsubishi Heavy Industries</div>
+              </div>
+              <div class="member-link">
+                <a class="btn linkedin small" href="https://www.linkedin.com/in/koji-ito-44049a3b7" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
             </div>
+
             <div class="team-member">
-              <div class="member-name">Takeyuki Yamamoto</div>
-              <div class="member-org">Mitsubishi Heavy Industries</div>
+              <div class="member-info">
+                <div class="member-name">Takeyuki Yamamoto</div>
+                <div class="member-org">Mitsubishi Heavy Industries</div>
+              </div>
+              <div class="member-link">
+                <a class="btn linkedin small" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
             </div>
+
             <div class="team-member">
-              <div class="member-name">Takumu Yamamoto</div>
-              <div class="member-org">Mitsubishi Heavy Industries</div>
+              <div class="member-info">
+                <div class="member-name">Takumu Yamamoto</div>
+                <div class="member-org">Mitsubishi Heavy Industries</div>
+              </div>
+              <div class="member-link">
+                <a class="btn linkedin small" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="quick-links">
-        <a class="btn primary" href="#company">Company Summary</a>
-        <a class="btn" href="#jp">日本語を見る</a>
-        <a class="btn linkedin" href="https://www.linkedin.com/in/koji-ito-44049a3b7" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
       </div>
     </section>
 
