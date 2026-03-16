@@ -9,15 +9,15 @@
     :root{
       --bg:#07101c;
       --panel:#0d1728;
-      --panel-2:#101d33;
+      --panel2:#101d33;
       --line:rgba(255,255,255,.10);
       --text:#eef4ff;
       --muted:#aab6cb;
-      --accent:#70a7ff;
-      --accent-2:#9fd3ff;
-      --glow:0 20px 60px rgba(0,0,0,.35);
+      --accent:#76a9ff;
+      --accent2:#a8d7ff;
       --radius:24px;
-      --max:1080px;
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --max:1100px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -26,202 +26,110 @@
       color:var(--text);
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Yu Gothic",sans-serif;
       background:
-        radial-gradient(1200px 500px at 90% -10%, rgba(112,167,255,.18), transparent 60%),
-        radial-gradient(900px 400px at 0% 0%, rgba(159,211,255,.12), transparent 50%),
-        linear-gradient(180deg,#060d17 0%, #09111d 40%, #08101c 100%);
+        radial-gradient(1100px 480px at 90% -5%, rgba(118,169,255,.16), transparent 60%),
+        radial-gradient(700px 300px at 0% 0%, rgba(168,215,255,.10), transparent 55%),
+        linear-gradient(180deg,#060d17 0%, #09111d 38%, #08101c 100%);
       line-height:1.65;
       letter-spacing:.01em;
     }
-    .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:24px 16px 56px;
-    }
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px 16px 56px}
     .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:8px 0 18px;
+      display:flex; justify-content:space-between; align-items:center; gap:12px;
+      padding:6px 0 18px;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width:0;
-    }
+    .brand{display:flex; align-items:center; gap:12px; min-width:0}
     .mark{
-      width:42px;height:42px;border-radius:14px;
-      background:linear-gradient(135deg,#163056,#0f1c31);
+      width:44px; height:44px; border-radius:14px;
       border:1px solid var(--line);
-      display:grid;place-items:center;
-      box-shadow:var(--glow);
+      background:linear-gradient(135deg,#163056,#0f1c31);
+      display:grid; place-items:center;
+      box-shadow:var(--shadow);
       overflow:hidden;
+      flex:0 0 auto;
     }
     .mark svg{width:28px;height:28px}
-    .brand-text{min-width:0}
-    .brand-text .kicker{
-      color:var(--accent-2);
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:.14em;
-      font-weight:700;
+    .brand-copy{min-width:0}
+    .eyebrow-mini{
+      color:var(--accent2); font-size:11px; font-weight:700;
+      text-transform:uppercase; letter-spacing:.14em;
     }
-    .brand-text .title{
-      font-size:14px;
-      font-weight:700;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
+    .brand-title{
+      font-size:14px; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
     }
     .badge{
       border:1px solid var(--line);
       background:rgba(255,255,255,.04);
+      color:var(--muted);
       padding:8px 12px;
       border-radius:999px;
       font-size:12px;
-      color:var(--muted);
       white-space:nowrap;
     }
     .hero{
-      position:relative;
-      overflow:hidden;
+      position:relative; overflow:hidden;
       border:1px solid var(--line);
       border-radius:30px;
       background:
         linear-gradient(160deg, rgba(255,255,255,.04), rgba(255,255,255,.02)),
         linear-gradient(180deg, #0d1728 0%, #0b1322 100%);
-      box-shadow:var(--glow);
-      padding:28px;
+      box-shadow:var(--shadow);
+      padding:30px;
     }
     .hero:before{
       content:"";
       position:absolute;
-      inset:auto -15% -30% auto;
-      width:420px;height:420px;
-      background:radial-gradient(circle, rgba(112,167,255,.16), transparent 60%);
+      width:420px; height:420px;
+      right:-120px; bottom:-160px;
+      background:radial-gradient(circle, rgba(118,169,255,.16), transparent 60%);
       pointer-events:none;
     }
     .hero-grid{
       display:grid;
-      grid-template-columns:1.15fr .85fr;
+      grid-template-columns:1.18fr .82fr;
       gap:24px;
       align-items:center;
     }
     .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
+      display:inline-flex; align-items:center; gap:8px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.04);
       border-radius:999px;
       padding:6px 12px;
-      color:var(--accent-2);
+      color:var(--accent2);
       font-size:12px;
       font-weight:700;
       text-transform:uppercase;
       letter-spacing:.12em;
     }
     h1{
-      font-size:clamp(28px, 5vw, 48px);
-      line-height:1.08;
       margin:14px 0 14px;
-      letter-spacing:-.02em;
+      font-size:clamp(29px,5vw,50px);
+      line-height:1.07;
+      letter-spacing:-.025em;
     }
     .lead{
+      margin:0 0 18px;
       color:var(--muted);
       font-size:16px;
-      max-width:60ch;
-      margin:0 0 18px;
+      max-width:62ch;
     }
-    .cta-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:14px;
-    }
+    .cta-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
     .cta{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
+      display:inline-flex; align-items:center; gap:8px;
       padding:10px 14px;
       border-radius:999px;
       text-decoration:none;
       color:var(--text);
       border:1px solid var(--line);
       background:rgba(255,255,255,.04);
-      font-size:13px;
-      font-weight:600;
+      font-size:13px; font-weight:600;
     }
     .cta.primary{
       background:linear-gradient(180deg,#1a4da7,#173b7d);
       border-color:rgba(255,255,255,.12);
     }
-    .visual{
-      position:relative;
-      min-height:280px;
-      border:1px solid var(--line);
-      border-radius:24px;
-      background:
-        linear-gradient(180deg, rgba(112,167,255,.10), rgba(255,255,255,.02)),
-        linear-gradient(180deg, #0a1323 0%, #0b1629 100%);
-      overflow:hidden;
-    }
-    .visual svg{
-      width:100%;
-      height:100%;
-      display:block;
-    }
-    .section-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-      margin-top:18px;
-    }
-    .card{
-      border:1px solid var(--line);
-      border-radius:24px;
-      background:linear-gradient(180deg,var(--panel),var(--panel-2));
-      box-shadow:var(--glow);
-      padding:22px;
-    }
-    .card h2{
-      margin:0 0 10px;
-      font-size:18px;
-      letter-spacing:-.01em;
-    }
-    .card p{
-      margin:0 0 12px;
-      color:var(--muted);
-    }
-    .pill-wrap{
-      display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;
-    }
-    .pill{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      color:#dbe7ff;
-      padding:9px 12px;
-      border-radius:999px;
-      font-size:13px;
-      line-height:1;
-    }
-    ul.clean{
-      margin:0;padding-left:18px;color:var(--muted);
-    }
-    ul.clean li{margin:8px 0}
-    .jp-box{
-      margin-top:18px;
-      border-top:1px solid var(--line);
-      padding-top:16px;
-      color:#d7e4fb;
-    }
-    .jp-box strong{font-size:15px}
     .numbers{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
-      margin-top:18px;
+      display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px;
     }
     .metric{
       border:1px solid var(--line);
@@ -236,15 +144,124 @@
       letter-spacing:.08em;
     }
     .metric .value{
-      font-size:22px;
-      font-weight:800;
       margin-top:4px;
+      font-size:21px;
+      font-weight:800;
       letter-spacing:-.02em;
     }
-    .metric .sub{
+    .metric .sub{color:var(--muted); font-size:12px; margin-top:6px}
+    .visual{
+      position:relative;
+      min-height:300px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:
+        linear-gradient(180deg, rgba(118,169,255,.10), rgba(255,255,255,.02)),
+        linear-gradient(180deg, #0a1323 0%, #0b1629 100%);
+      overflow:hidden;
+    }
+    .visual svg{width:100%; height:100%; display:block}
+    .jp-box{
+      margin-top:18px;
+      border-top:1px solid var(--line);
+      padding-top:16px;
+      color:#d7e4fb;
+    }
+    .jp-box strong{font-size:15px}
+    .grid{
+      display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:18px;
+    }
+    .card{
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:linear-gradient(180deg,var(--panel),var(--panel2));
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:-.01em;
+    }
+    .card p{margin:0 0 12px; color:var(--muted)}
+    ul.clean{margin:0; padding-left:18px; color:var(--muted)}
+    ul.clean li{margin:8px 0}
+    .pill-wrap{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    .pill{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:#dbe7ff;
+      padding:9px 12px;
+      border-radius:999px;
+      font-size:13px;
+      line-height:1;
+    }
+    .purpose{
+      margin-top:18px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:linear-gradient(180deg,#0d1728,#0f1a2c);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+    .purpose h2{margin:0 0 10px; font-size:20px}
+    .purpose-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:18px;
+      margin-top:10px;
+    }
+    .mini-card{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.035);
+      padding:16px;
+    }
+    .mini-card h3{
+      margin:0 0 8px;
+      font-size:15px;
+      color:#fff;
+      letter-spacing:-.01em;
+    }
+    .tech-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      margin-top:10px;
+    }
+    .tech{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.035);
+      padding:14px;
+    }
+    .tech .name{
+      font-weight:700;
+      margin-bottom:4px;
+    }
+    .tech .desc{
       color:var(--muted);
-      font-size:12px;
-      margin-top:6px;
+      font-size:13px;
+    }
+    .contact{
+      margin-top:18px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:linear-gradient(180deg,#0d1728,#0f1a2c);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+    .contact-line{
+      display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;
+    }
+    .contact-pill{
+      display:inline-flex; align-items:center;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      padding:10px 12px;
+      border-radius:999px;
+      color:#dbe7ff;
+      font-size:13px;
     }
     .footer{
       padding:18px 0 0;
@@ -252,11 +269,12 @@
       color:var(--muted);
       font-size:12px;
     }
-    @media (max-width: 860px){
-      .hero-grid, .section-grid{grid-template-columns:1fr}
-      .visual{min-height:220px}
+    @media (max-width: 900px){
+      .hero-grid,.grid,.purpose-grid{grid-template-columns:1fr}
       .numbers{grid-template-columns:1fr}
-      .nav{align-items:flex-start; flex-direction:column}
+      .tech-grid{grid-template-columns:1fr}
+      .nav{flex-direction:column; align-items:flex-start}
+      .visual{min-height:220px}
     }
   </style>
 </head>
@@ -269,18 +287,18 @@
             <path d="M32 8 40 24 56 32 40 40 32 56 24 40 8 32 24 24 32 8Z" fill="url(#g)"/>
             <defs>
               <linearGradient id="g" x1="8" y1="8" x2="56" y2="56">
-                <stop stop-color="#9fd3ff"/>
-                <stop offset="1" stop-color="#70a7ff"/>
+                <stop stop-color="#a8d7ff"/>
+                <stop offset="1" stop-color="#76a9ff"/>
               </linearGradient>
             </defs>
           </svg>
         </div>
-        <div class="brand-text">
-          <div class="kicker">GTC Event Page</div>
-          <div class="title">Mitsubishi Heavy Industries, Ltd. | Aircraft Manufacturing Division</div>
+        <div class="brand-copy">
+          <div class="eyebrow-mini">GTC Event Page</div>
+          <div class="brand-title">Mitsubishi Heavy Industries, Ltd. | Aircraft Manufacturing Division</div>
         </div>
       </div>
-      <div class="badge">Mobile-ready company summary</div>
+      <div class="badge">QR-friendly company summary</div>
     </div>
 
     <section class="hero">
@@ -289,12 +307,14 @@
           <div class="eyebrow">Company Overview</div>
           <h1>Defense aircraft manufacturing supported by a broad industrial base</h1>
           <p class="lead">
-            Mitsubishi Heavy Industries’ Aircraft Manufacturing Division leverages advanced engineering and manufacturing capabilities
-            from across the wider group, spanning aerospace, defense, energy, shipbuilding, rail systems, and decarbonization.
+            Mitsubishi Heavy Industries’ Aircraft Manufacturing Division focuses on defense aircraft manufacturing and leverages advanced
+            engineering and production capabilities from across the wider group, including aerospace, defense, energy, rail, shipbuilding,
+            and decarbonization.
           </p>
 
           <div class="cta-row">
-            <a class="cta primary" href="#summary">View Summary</a>
+            <a class="cta primary" href="#purpose">Purpose at GTC</a>
+            <a class="cta" href="#summary">View Summary</a>
             <a class="cta" href="#jp">日本語を見る</a>
           </div>
 
@@ -305,14 +325,14 @@
               <div class="sub">Aircraft manufacturing</div>
             </div>
             <div class="metric">
-              <div class="label">Industrial Scope</div>
-              <div class="value">Multi-sector</div>
-              <div class="sub">Group-wide engineering base</div>
+              <div class="label">Focus at GTC</div>
+              <div class="value">AI + Physical AI</div>
+              <div class="sub">Workflow efficiency and industrial application</div>
             </div>
             <div class="metric">
-              <div class="label">Use Case</div>
-              <div class="value">GTC Sharing</div>
-              <div class="sub">QR landing page format</div>
+              <div class="label">Format</div>
+              <div class="value">Event Landing Page</div>
+              <div class="sub">Designed for QR sharing</div>
             </div>
           </div>
         </div>
@@ -321,17 +341,15 @@
           <svg viewBox="0 0 700 520" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="planeGlow" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#b4dcff" stop-opacity="1"/>
-                <stop offset="100%" stop-color="#5e8fff" stop-opacity=".9"/>
+                <stop offset="0%" stop-color="#bfe0ff" stop-opacity="1"/>
+                <stop offset="100%" stop-color="#5e8fff" stop-opacity=".92"/>
               </linearGradient>
               <linearGradient id="lineGlow" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stop-color="#8ec5ff" stop-opacity="0"/>
                 <stop offset="50%" stop-color="#8ec5ff" stop-opacity=".55"/>
                 <stop offset="100%" stop-color="#8ec5ff" stop-opacity="0"/>
               </linearGradient>
-              <filter id="blur">
-                <feGaussianBlur stdDeviation="10"/>
-              </filter>
+              <filter id="blur"><feGaussianBlur stdDeviation="10"/></filter>
             </defs>
 
             <circle cx="560" cy="110" r="90" fill="#78a6ff" opacity=".12" filter="url(#blur)"/>
@@ -366,11 +384,58 @@
         <strong>日本語サマリ</strong><br>
         三菱重工業株式会社 航空機製造部は、防衛向け航空機製造を担う部門です。航空宇宙・防衛に加え、
         艦艇、鉄道、原子力、火力、脱炭素設備など幅広い事業基盤を持つ総合重工メーカーの技術力を背景に、
-        高信頼なものづくりを展開しています。
+        高信頼なものづくりを展開しています。GTCでは、AIによるドキュメント作業の効率化と、
+        航空機産業におけるフィジカルAIの可能性を中心に情報交換を進めたいと考えています。
       </div>
     </section>
 
-    <div class="section-grid" id="summary">
+    <section class="purpose" id="purpose">
+      <h2>Purpose at GTC</h2>
+      <p>
+        We are exploring how AI can improve engineering and documentation workflows, and how Physical AI can be applied in the aerospace industry.
+      </p>
+
+      <div class="purpose-grid">
+        <div class="mini-card">
+          <h3>Current Interests</h3>
+          <ul class="clean">
+            <li>AI-driven efficiency for engineering and documentation work</li>
+            <li>Practical use cases of Physical AI in aerospace and manufacturing</li>
+            <li>Industrial workflows that connect simulation, engineering data, and execution</li>
+          </ul>
+        </div>
+
+        <div class="mini-card">
+          <h3>Looking to Connect With</h3>
+          <ul class="clean">
+            <li>Teams working on industrial AI and digital engineering</li>
+            <li>Partners in simulation and digital twin environments</li>
+            <li>Robotics and Physical AI developers for manufacturing settings</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech">
+          <div class="name">Omniverse</div>
+          <div class="desc">Collaboration environments linking 3D data, engineering assets, and workflow integration.</div>
+        </div>
+        <div class="tech">
+          <div class="name">Digital Twin</div>
+          <div class="desc">Virtual representations of products and processes for design validation and operational insight.</div>
+        </div>
+        <div class="tech">
+          <div class="name">Robotics</div>
+          <div class="desc">Automation and intelligent systems for physical work in advanced industrial environments.</div>
+        </div>
+        <div class="tech">
+          <div class="name">Simulation</div>
+          <div class="desc">Model-based exploration and verification supporting engineering and manufacturing decisions.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid" id="summary">
       <section class="card">
         <h2>Business Focus</h2>
         <p>
@@ -411,15 +476,30 @@
           <li>Strong industrial base for complex programs</li>
         </ul>
 
-        <h2>Event Use</h2>
-        <p>
-          This page is designed for conference networking and exhibition sharing. It is optimized for smartphone viewing after QR scanning.
-        </p>
+        <h2>Best Conversation Topics</h2>
+        <ul class="clean">
+          <li>Engineering documentation with AI assistance</li>
+          <li>Physical AI opportunities in aircraft manufacturing</li>
+          <li>Simulation-driven workflow improvement</li>
+        </ul>
       </section>
     </div>
 
+    <section class="contact">
+      <h2>Quick Conversation Starter</h2>
+      <p>
+        Interested in discussing AI-enhanced engineering workflows, digital twin environments, simulation, robotics, and Physical AI in aerospace manufacturing.
+      </p>
+      <div class="contact-line">
+        <div class="contact-pill">Topic: AI for documentation</div>
+        <div class="contact-pill">Topic: Physical AI for aerospace</div>
+        <div class="contact-pill">Topic: Omniverse / Digital Twin</div>
+        <div class="contact-pill">Topic: Robotics / Simulation</div>
+      </div>
+    </section>
+
     <div class="footer">
-      Prepared as a compact event-facing summary page
+      Prepared as a compact event-facing summary page for GTC sharing
     </div>
   </div>
 </body>
